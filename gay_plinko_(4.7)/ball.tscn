@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://7jgio8cingnp"]
+
+[ext_resource type="Script" uid="uid://b7j24v365fwb4" path="res://ball.gd" id="1_ktgx5"]
+[ext_resource type="Texture2D" uid="uid://qm6kjqr2vwp5" path="res://balls.png" id="1_x8fbi"]
+[ext_resource type="PackedScene" uid="uid://5cqisg6lye2n" path="res://shotgun.tscn" id="3_hgol0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0xm2m"]
+bounce = 0.75
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2gk3h"]
+radius = 20.880613
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=969029978]
+physics_material_override = SubResource("PhysicsMaterial_0xm2m")
+script = ExtResource("1_ktgx5")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=844701614]
+scale = Vector2(0.19626167, 0.19626163)
+texture = ExtResource("1_x8fbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=44424211]
+shape = SubResource("CircleShape2D_2gk3h")
+
+[node name="shotgun" parent="." unique_id=1391668372 instance=ExtResource("3_hgol0")]

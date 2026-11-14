@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://5cqisg6lye2n"]
+
+[ext_resource type="Script" uid="uid://cf2qm10id1ox8" path="res://shotgun.gd" id="1_gnj2g"]
+[ext_resource type="Texture2D" uid="uid://bdp0nb3uuhaac" path="res://b26bf2cee6625915e8e34c56f773c8b2.jpg" id="2_1ya1i"]
+
+[node name="shotgun" type="Node2D" unique_id=1391668372]
+script = ExtResource("1_gnj2g")
+
+[node name="rotnod" type="Node2D" parent="." unique_id=1006260747]
+
+[node name="Sprite2D" type="Sprite2D" parent="rotnod" unique_id=1492534977]
+position = Vector2(0, -38)
+scale = Vector2(0.030612238, 0.03061224)
+texture = ExtResource("2_1ya1i")
+offset = Vector2(0.0006002248, 6.1035156e-05)
+
+[node name="RayCast2D" type="RayCast2D" parent="rotnod" unique_id=1973293359]
+scale = Vector2(2.967, 1)
+target_position = Vector2(0, -149)
