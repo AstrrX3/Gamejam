@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://3vr13r38vcum"]
+
+[sub_resource type="GDScript" id="GDScript_55g31"]
+resource_name = "coin_spawner"
+script/source = "extends Node2D
+
+@export var point_1: Vector2 = Vector2(1,0)
+@export var point_2: Vector2 = Vector2(1150,0)
+@onready var coin_bluprint: Resource = preload(\"res://coin.tscn\")
+
+func _ready():
+	randomize()
+	
+func get_random_point_inside(point_1: Vector2, point_2: Vector2) -> Vector2:
+	var x_value: float = randf_range(point_1.x, point_2.x)
+	var random_point_inside: Vector2 = Vector2(x_value, 25)
+	return(random_point_inside)
+
+func spawn_coins():
+	var coin_instancja = coin_bluprint.instantiate()
+	var spawn_location: Vector2 = get_random_point_inside(point_1, point_2)
+	coin_instancja.set_position(spawn_location)
+	add_child(coin_instancja)
+
+
+	
+func _process(_delta):
+	if Input.is_action_just_pressed(\"test_coin_spawn\"):
+		spawn_coins()
+"
+
+[node name="Node2D" type="Node2D" unique_id=1432049507]
+script = SubResource("GDScript_55g31")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=78940127]
+position = Vector2(579, 324)
