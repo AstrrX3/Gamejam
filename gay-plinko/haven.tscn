@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqqge7dk2by4o"]
 
 [ext_resource type="PackedScene" uid="uid://c67loyy3ede8g" path="res://sciany.tscn" id="1_7oneb"]
+[ext_resource type="Texture2D" uid="uid://bsandny1ep0dp" path="res://Bg2.png" id="1_55g31"]
 [ext_resource type="PackedScene" uid="uid://brlvsdys076t0" path="res://peg.tscn" id="2_vcnv3"]
 [ext_resource type="PackedScene" uid="uid://cw0s1ry8x17pi" path="res://trójkąt.tscn" id="3_pix54"]
 
@@ -8,6 +9,9 @@
 scale = Vector2(1, 0.99016505)
 
 [node name="bg" type="Sprite2D" parent="." unique_id=394721876]
+position = Vector2(0, 7.0695286)
+scale = Vector2(0.5568611, 0.6018526)
+texture = ExtResource("1_55g31")
 
 [node name="scianaUP" parent="." unique_id=10204914 instance=ExtResource("1_7oneb")]
 position = Vector2(-1.00003, -295)
