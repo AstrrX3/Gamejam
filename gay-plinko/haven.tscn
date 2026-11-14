@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c67loyy3ede8g" path="res://sciany.tscn" id="1_7oneb"]
 [ext_resource type="PackedScene" uid="uid://brlvsdys076t0" path="res://peg.tscn" id="2_vcnv3"]
 [ext_resource type="PackedScene" uid="uid://cw0s1ry8x17pi" path="res://trójkąt.tscn" id="3_pix54"]
-[ext_resource type="PackedScene" uid="uid://7jgio8cingnp" path="res://ball.tscn" id="4_55g31"]
 
 [node name="Node2D" type="Node2D" unique_id=1951845257]
 position = Vector2(-281, -314)
@@ -54,9 +53,6 @@ scale = Vector2(-1.0056858, 0.9931652)
 position = Vector2(206.99997, 213)
 rotation = -2.3561945
 scale = Vector2(-1.0056858, 0.9931652)
-
-[node name="RigidBody2D" parent="." unique_id=969029978 instance=ExtResource("4_55g31")]
-position = Vector2(151, 143)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1407160539]
 position = Vector2(282, 312)
