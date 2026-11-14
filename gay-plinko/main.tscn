@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bhmo1dvkvyrip"]
+
+[ext_resource type="PackedScene" uid="uid://7jgio8cingnp" path="res://ball.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bql4gxnlcjgh5" path="res://platform.tscn" id="2_0xm2m"]
+
+[node name="base" type="Node2D" unique_id=1876613877 groups=["wall"]]
+
+[node name="RigidBody2D" parent="." unique_id=969029978 instance=ExtResource("1_ig7tw")]
+position = Vector2(524, 148)
+
+[node name="StaticBody2D" parent="." unique_id=695491958 groups=["wall"] instance=ExtResource("2_0xm2m")]
+position = Vector2(512, 430)
+rotation = 0.44250375

@@ -24,13 +24,22 @@ func spawn_coins():
 
 
 	
-func _process(_delta):
-	if Input.is_action_just_pressed(\"test_coin_spawn\"):
+func _on_timer_timeout():
 		spawn_coins()
+
+
+	
 "
 
 [node name="Node2D" type="Node2D" unique_id=1432049507]
 script = SubResource("GDScript_55g31")
 
+[node name="Timer" type="Timer" parent="." unique_id=1018251872]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=78940127]
 position = Vector2(579, 324)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
