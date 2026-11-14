@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Gay Plinko"
 run/main_scene="uid://bxsv72su7clxx"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+config/features=PackedStringArray("4.8", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
@@ -34,8 +34,25 @@ wall=""
 
 shoot={
 "deadzone": 0.2,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(80, 21),"global_position":Vector2(89, 69),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
-]
+"events": [Object(InputEventMouseButton,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"button_mask": 1,
+"position": Vector2(80, 21),
+"global_position": Vector2(89, 69),
+"factor": 1.0,
+"button_index": 1,
+"canceled": false,
+"pressed": true,
+"double_click": false,
+"script": null
+)]
 }
 test_coin_spawn={
 "deadzone": 0.2,

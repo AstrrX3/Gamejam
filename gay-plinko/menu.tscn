@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://ddl1lvckw6i13"]
+
+[ext_resource type="Script" uid="uid://yj01hw3gu5lk" path="res://menu.gd" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://7x2jni53nib5" path="res://FatFuck.png" id="1_ouk20"]
+[ext_resource type="Texture2D" uid="uid://cprgnd6rngksp" path="res://icon.svg" id="2_mae5d"]
+[ext_resource type="PackedScene" uid="uid://j7lnlm2bax2j" path="res://fadetrans.tscn" id="4_4hy44"]
+
+[node name="Node2D" type="Node2D" unique_id=41311468]
+script = ExtResource("1_mae5d")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=384701607]
+
+[node name="Button_Manager" type="Control" parent="." unique_id=832836736]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Button" parent="Button_Manager" unique_id=551992916]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -15.2
+anchor_top = -9.475
+anchor_right = -15.2
+anchor_bottom = -9.475
+offset_left = 104.0
+offset_top = 170.0
+offset_right = 539.0
+offset_bottom = 306.0
+text = "START"
+icon = ExtResource("2_mae5d")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="Button_Manager" unique_id=1323545136]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -15.075002
+anchor_top = -6.35
+anchor_right = -15.075002
+anchor_bottom = -6.35
+offset_left = 106.0
+offset_top = 346.0
+offset_right = 557.12915
+offset_bottom = 495.43066
+scale = Vector2(0.9686805, 0.9636576)
+text = "QUIT"
+icon = ExtResource("2_mae5d")
+metadata/_edit_use_anchors_ = true
+
+[node name="FatFuck" type="Sprite2D" parent="." unique_id=1932595659]
+position = Vector2(361.00003, 145)
+scale = Vector2(0.30624998, 0.30624995)
+texture = ExtResource("1_ouk20")
+
+[node name="fadetrans" parent="." unique_id=222964886 instance=ExtResource("4_4hy44")]
+visible = false
+offset_left = -578.0
+offset_top = -325.0
+offset_right = 576.0
+offset_bottom = 324.0
+
+[node name="Fade_timer" type="Timer" parent="fadetrans" unique_id=1601897975]
+
+[connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_Manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="fadetrans/Fade_timer" to="." method="_on_fade_timer_timeout"]
