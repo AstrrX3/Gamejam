@@ -1,7 +1,7 @@
 extends Node2D
 
 var enemies: Array
-@export var power = -600
+@export var power = -700
 @export var multeffect = 20
 @export var knockback = 3
 @export var reload = 0.8

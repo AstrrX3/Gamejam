@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://por5xpo8ai50"]
+
+[ext_resource type="Script" uid="uid://dw7coow2nx0j7" path="res://bumper.gd" id="1_sn2yj"]
+[ext_resource type="Texture2D" uid="uid://vhxuos5khptk" path="res://CircleBumperBottom,.png" id="2_32yb8"]
+[ext_resource type="Texture2D" uid="uid://coj5tvrjx0r4s" path="res://CircleBumperTop.png" id="3_ou0cc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4ie1"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2gk3h"]
+radius = 26.172504
+
+[sub_resource type="Animation" id="Animation_32yb8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CircleBumperBottom,:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.14, 0.14)]
+}
+
+[sub_resource type="Animation" id="Animation_sn2yj"]
+resource_name = "bump"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CircleBumperBottom,:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.14, 0.14), Vector2(0.18, 0.18), Vector2(0.14, 0.14)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32yb8"]
+_data = {
+&"RESET": SubResource("Animation_32yb8"),
+&"bump": SubResource("Animation_sn2yj")
+}
+
+[node name="bumper" type="Node2D" unique_id=2039316992]
+script = ExtResource("1_sn2yj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1960888139]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=241049181]
+shape = SubResource("CircleShape2D_y4ie1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=638033161]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=787636276]
+shape = SubResource("CircleShape2D_2gk3h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=625082475]
+libraries/ = SubResource("AnimationLibrary_32yb8")
+
+[node name="CircleBumperBottom," type="Sprite2D" parent="." unique_id=1432986534]
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_32yb8")
+
+[node name="CircleBumperTop" type="Sprite2D" parent="." unique_id=280711785]
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("3_ou0cc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
