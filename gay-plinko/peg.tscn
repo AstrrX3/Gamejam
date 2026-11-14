@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://brlvsdys076t0"]
+
+[ext_resource type="Texture2D" uid="uid://bs8j3740nr20l" path="res://Peg.png" id="1_y34qd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pix54"]
+radius = 6.0249515
+
+[node name="peg" type="StaticBody2D" unique_id=1610342526]
+scale = Vector2(0.73601437, 0.73318124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1206286259]
+scale = Vector2(2.9999998, 2.9999998)
+shape = SubResource("CircleShape2D_pix54")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1490811152]
+modulate = Color(1, 0.39607844, 0.3529412, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_y34qd")
