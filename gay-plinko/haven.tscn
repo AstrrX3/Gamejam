@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c67loyy3ede8g" path="res://sciany.tscn" id="1_7oneb"]
 [ext_resource type="PackedScene" uid="uid://brlvsdys076t0" path="res://peg.tscn" id="2_vcnv3"]
 [ext_resource type="PackedScene" uid="uid://cw0s1ry8x17pi" path="res://trójkąt.tscn" id="3_pix54"]
+[ext_resource type="PackedScene" uid="uid://b8u0svpxi5tgi" path="res://coin.tscn" id="4_55g31"]
 
 [node name="Node2D" type="Node2D" unique_id=1951845257]
 
@@ -55,3 +56,6 @@ scale = Vector2(-1.0056858, 0.9931652)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1407160539]
 position = Vector2(-5, 5)
+
+[node name="Node2D" parent="." unique_id=849454680 instance=ExtResource("4_55g31")]
+position = Vector2(-181, -250)
