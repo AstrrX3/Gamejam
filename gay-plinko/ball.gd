@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var hardcap = 800
+@export var hardcap = 600
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,3 +12,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		apply_impulse($shotgun.shoot())
 		
+func _integrate_forces(state):
+	if state.linear_velocity.length()>hardcap:
+		state.linear_velocity=state.linear_velocity.normalized()*hardcap
