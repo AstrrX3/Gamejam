@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8u0svpxi5tgi"]
 
-[ext_resource type="Texture2D" uid="uid://cprgnd6rngksp" path="res://icon.svg" id="1_d5gmh"]
+[ext_resource type="Texture2D" uid="uid://bpvl4u01ksqtr" path="res://Coin.png" id="1_d5gmh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2yge"]
 bounce = 0.5
@@ -8,12 +8,13 @@ bounce = 0.5
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=35264023]
-modulate = Color(1, 1, 0.34901962, 1)
+rotation = 2.7861578
 scale = Vector2(0.6399994, 0.6399994)
 physics_material_override = SubResource("PhysicsMaterial_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234650189]
-scale = Vector2(0.390625, 0.390625)
+position = Vector2(1.5625018, 3.1250036)
+scale = Vector2(0.21104982, 0.21104982)
 texture = ExtResource("1_d5gmh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1993439228]
