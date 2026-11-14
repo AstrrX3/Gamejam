@@ -3,54 +3,60 @@
 [ext_resource type="PackedScene" uid="uid://c67loyy3ede8g" path="res://sciany.tscn" id="1_7oneb"]
 [ext_resource type="PackedScene" uid="uid://brlvsdys076t0" path="res://peg.tscn" id="2_vcnv3"]
 [ext_resource type="PackedScene" uid="uid://cw0s1ry8x17pi" path="res://trójkąt.tscn" id="3_pix54"]
+[ext_resource type="PackedScene" uid="uid://7jgio8cingnp" path="res://ball.tscn" id="4_55g31"]
 
 [node name="Node2D" type="Node2D" unique_id=1951845257]
-position = Vector2(0, 6)
+position = Vector2(-281, -314)
 
 [node name="scianaUP" parent="." unique_id=10204914 instance=ExtResource("1_7oneb")]
-position = Vector2(555, 20)
+position = Vector2(281, 9)
 scale = Vector2(4.163885, 0.30270332)
 
-[node name="scianaprawo" parent="." unique_id=1708250551 instance=ExtResource("1_7oneb")]
-position = Vector2(801.99994, 315)
-rotation = -1.5707964
-scale = Vector2(5.0439997, 0.303)
-skew = -0.03333199
-
 [node name="scianalewo" parent="." unique_id=1679458082 instance=ExtResource("1_7oneb")]
-position = Vector2(296.00003, 330)
+position = Vector2(22.00003, 319)
+rotation = 1.5707964
+scale = Vector2(5.0438867, 0.30270332)
+
+[node name="scianaprawo" parent="." unique_id=1184736606 instance=ExtResource("1_7oneb")]
+position = Vector2(527, 319)
 rotation = 1.5707964
 scale = Vector2(5.0438867, 0.30270332)
 
 [node name="peg" parent="." unique_id=1610342526 instance=ExtResource("2_vcnv3")]
-position = Vector2(552, 377)
+position = Vector2(277.99997, 365.99997)
 
 [node name="peg2" parent="." unique_id=1889362298 instance=ExtResource("2_vcnv3")]
-position = Vector2(466, 469.00003)
+position = Vector2(191.99997, 457.99997)
 
 [node name="peg3" parent="." unique_id=1322593018 instance=ExtResource("2_vcnv3")]
-position = Vector2(466, 289.00006)
+position = Vector2(191.99997, 278.00006)
 
 [node name="peg4" parent="." unique_id=696279382 instance=ExtResource("2_vcnv3")]
-position = Vector2(401, 377)
+position = Vector2(126.99997, 365.99997)
 
 [node name="peg5" parent="." unique_id=1561854433 instance=ExtResource("2_vcnv3")]
-position = Vector2(699, 377)
+position = Vector2(424.99997, 365.99997)
 
 [node name="peg6" parent="." unique_id=1956978344 instance=ExtResource("2_vcnv3")]
-position = Vector2(634, 469.00003)
+position = Vector2(359.99997, 457.99997)
 
 [node name="peg7" parent="." unique_id=1094218745 instance=ExtResource("2_vcnv3")]
-position = Vector2(634, 289.00006)
+position = Vector2(359.99997, 278.00006)
 
 [node name="trójkąt" parent="." unique_id=780500453 instance=ExtResource("3_pix54")]
-position = Vector2(317, 439)
+position = Vector2(42.99997, 428)
 
 [node name="trójkąt2" parent="." unique_id=986926331 instance=ExtResource("3_pix54")]
-position = Vector2(783, 446.00003)
+position = Vector2(508.99997, 435.00003)
 scale = Vector2(-1.0056858, 0.9931652)
 
 [node name="trójkąt3" parent="." unique_id=877099670 instance=ExtResource("3_pix54")]
-position = Vector2(481, 224)
+position = Vector2(206.99997, 213)
 rotation = -2.3561945
 scale = Vector2(-1.0056858, 0.9931652)
+
+[node name="RigidBody2D" parent="." unique_id=969029978 instance=ExtResource("4_55g31")]
+position = Vector2(151, 143)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1407160539]
+position = Vector2(282, 312)
