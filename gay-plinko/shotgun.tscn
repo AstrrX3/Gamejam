@@ -9,8 +9,8 @@ script = ExtResource("1_gnj2g")
 [node name="rotnod" type="Node2D" parent="." unique_id=1006260747]
 
 [node name="Sprite2D" type="Sprite2D" parent="rotnod" unique_id=1492534977]
-position = Vector2(0, -38)
-scale = Vector2(0.030612238, 0.03061224)
+position = Vector2(8.875008e-06, -21.999998)
+scale = Vector2(0.016233705, 0.027210869)
 texture = ExtResource("2_1ya1i")
 offset = Vector2(0.0006002248, 6.1035156e-05)
 
