@@ -8,6 +8,8 @@ script/source = "extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"player\"):
 		print(\"ded\")
+	if body.is_in_group(\"coin\"):
+		body.queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gk3h"]

@@ -9,7 +9,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func del():
+func del(mult):
+	Global.score +=5 * mult
 	queue_free()
 	
 	
