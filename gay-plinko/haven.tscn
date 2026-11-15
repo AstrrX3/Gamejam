@@ -5,60 +5,66 @@
 [ext_resource type="PackedScene" uid="uid://brlvsdys076t0" path="res://peg.tscn" id="2_vcnv3"]
 [ext_resource type="PackedScene" uid="uid://cw0s1ry8x17pi" path="res://trójkąt.tscn" id="3_pix54"]
 
-[node name="Node2D" type="Node2D" unique_id=1951845257]
+[node name="Node2D2" type="Node2D" unique_id=1951845257]
 scale = Vector2(1, 0.99016505)
 
 [node name="bg" type="Sprite2D" parent="." unique_id=394721876]
-position = Vector2(0, 7.0695286)
-scale = Vector2(0.5568611, 0.6018526)
+position = Vector2(-4, 6.059595)
+scale = Vector2(0.613, 0.613)
 texture = ExtResource("1_55g31")
 
 [node name="scianaUP" parent="." unique_id=10204914 instance=ExtResource("1_7oneb")]
-position = Vector2(-1.00003, -295)
-scale = Vector2(4.163885, 0.30270332)
+position = Vector2(-1.00003, -344.38702)
+scale = Vector2(4.62303, 0.3062407)
+
+[node name="CollisionShape2D" parent="scianaUP" index="0" unique_id=2142807919]
+one_way_collision = true
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="Sprite2D" parent="scianaUP" index="1" unique_id=697870181]
+position = Vector2(-1, 32.977783)
 
 [node name="scianalewo" parent="." unique_id=1679458082 instance=ExtResource("1_7oneb")]
-position = Vector2(-260, 15.000007)
+position = Vector2(-307.21835, -45.44698)
 rotation = 1.5707964
 scale = Vector2(6.21634, 0.30270332)
 
 [node name="scianaprawo" parent="." unique_id=1184736606 instance=ExtResource("1_7oneb")]
-position = Vector2(244.99997, 15.000007)
+position = Vector2(298.20856, -10.099326)
 rotation = 1.5707964
-scale = Vector2(5.0438867, 0.30270332)
+scale = Vector2(5.523887, 0.30270332)
 
 [node name="peg" parent="." unique_id=1610342526 instance=ExtResource("2_vcnv3")]
 position = Vector2(-4.0000916, 61.99991)
 
 [node name="peg2" parent="." unique_id=1889362298 instance=ExtResource("2_vcnv3")]
-position = Vector2(-90.00009, 153.99991)
+position = Vector2(-106.00009, 153.99991)
 
 [node name="peg3" parent="." unique_id=1322593018 instance=ExtResource("2_vcnv3")]
-position = Vector2(-90.00009, -26)
+position = Vector2(-106.00009, -26)
 
 [node name="peg4" parent="." unique_id=696279382 instance=ExtResource("2_vcnv3")]
-position = Vector2(-155.00009, 61.99991)
+position = Vector2(-171.00009, 61.99991)
 
 [node name="peg5" parent="." unique_id=1561854433 instance=ExtResource("2_vcnv3")]
-position = Vector2(142.99991, 61.99991)
+position = Vector2(158.99991, 61.99991)
 
 [node name="peg6" parent="." unique_id=1956978344 instance=ExtResource("2_vcnv3")]
-position = Vector2(77.99991, 153.99991)
+position = Vector2(93.99991, 153.99991)
 
 [node name="peg7" parent="." unique_id=1094218745 instance=ExtResource("2_vcnv3")]
-position = Vector2(77.99991, -26)
+position = Vector2(93.99991, -26)
 
 [node name="trójkąt" parent="." unique_id=780500453 instance=ExtResource("3_pix54")]
-position = Vector2(-239.00009, 123.999985)
+position = Vector2(-290, 111.09259)
 
 [node name="trójkąt2" parent="." unique_id=986926331 instance=ExtResource("3_pix54")]
-position = Vector2(226.99991, 131.00002)
+position = Vector2(291, 112.10252)
 scale = Vector2(-1.0056858, 0.9931652)
 
 [node name="trójkąt3" parent="." unique_id=877099670 instance=ExtResource("3_pix54")]
-position = Vector2(-75.00009, -91.000015)
+position = Vector2(-67.00001, -85.84428)
 rotation = -2.3561945
 scale = Vector2(-1.0056858, 0.9931652)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1407160539]
-position = Vector2(-5, 5)
+[editable path="scianaUP"]

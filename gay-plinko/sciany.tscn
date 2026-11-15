@@ -13,6 +13,7 @@ position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_guxlg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=697870181]
+visible = false
 modulate = Color(0, 0, 1, 1)
 position = Vector2(-1, 0)
 texture = ExtResource("1_0e0yw")

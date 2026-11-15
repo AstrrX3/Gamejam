@@ -9,6 +9,7 @@ var enemies: Array
 var rotcorrect = 0
 var Mcharge = charge
 var restime: float = 0
+var targets: Array = []
 #the values are all over the place im so sorry TwT
 
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +22,9 @@ func _process(delta: float) -> void:
 	restime += delta
 	if restime > reload:
 		charge = Mcharge
-	rotation_degrees = (global_position - get_global_mouse_position()).angle() * (180/PI) - 90 - rotcorrect #what in gods name is this supposed to be
+	$Label.text = str(charge)
+	$rotnod.rotation_degrees = (global_position - get_global_mouse_position()).angle() * (180/PI) - 90 - rotcorrect #what in gods name is this supposed to be
+	$Label.rotation_degrees = -rotcorrect
 
 func shoot():
 	#idk why but local mouse position refuses to work correctly and 
@@ -37,8 +40,19 @@ func shoot():
 		if $rotnod/RayCast2D.get_collider().is_in_group("wall"):
 			mult += 5 / (global_position - $rotnod/RayCast2D.get_collision_point()).length()
 			print(mult)
-	for i in enemies.size():
-		var who = enemies.get(i)
-		who.hurt(dir * knockback, 1)
+	for i in targets:
+		i.del()
 	vel = power * mult
 	return dir * vel
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("coin"):
+		targets.append(body)
+		print(targets)
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("coin"):
+		targets.remove_at(targets.find(body))
+		print(targets)

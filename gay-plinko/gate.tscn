@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://tkll5eks6cfb"]
+
+[ext_resource type="Script" path="res://gate.gd" id="1_15vrf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gk3h"]
+size = Vector2(78, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4ie1"]
+size = Vector2(4, 62)
+
+[sub_resource type="FontFile" id="FontFile_y4ie1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Node2D" type="Node2D" unique_id=1904139459]
+script = ExtResource("1_15vrf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=568190223]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1762724144]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_2gk3h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=454521890]
+position = Vector2(-40, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1189040531]
+shape = SubResource("RectangleShape2D_y4ie1")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1933771532]
+offset_left = -2.0
+offset_top = -31.0
+offset_right = 2.0
+offset_bottom = 31.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=3379313]
+position = Vector2(40, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=62204767]
+shape = SubResource("RectangleShape2D_y4ie1")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=924117657]
+offset_left = -2.0
+offset_top = -31.0
+offset_right = 2.0
+offset_bottom = 31.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2093563966]
+offset_left = -38.0
+offset_top = -29.0
+offset_right = 38.0
+offset_bottom = 29.0
+color = Color(1, 0, 0, 0.19607843)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2052777837]
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_fonts/font = SubResource("FontFile_y4ie1")
+text = "1x"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

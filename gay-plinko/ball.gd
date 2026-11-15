@@ -15,3 +15,7 @@ func _process(delta: float) -> void:
 func _integrate_forces(state):
 	if state.linear_velocity.length()>hardcap:
 		state.linear_velocity=state.linear_velocity.normalized()*hardcap
+
+
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+	#$shotgun.charge = $shotgun.Mcharge

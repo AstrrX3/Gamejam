@@ -4,12 +4,13 @@
 
 [node name="trójkąt" type="StaticBody2D" unique_id=780500453]
 
+[node name="TriangleBumper" type="Sprite2D" parent="." unique_id=1497309792]
+position = Vector2(49, -5.9604645e-08)
+rotation = 3.1415927
+scale = Vector2(0.38272855, -0.81362355)
+texture = ExtResource("1_5y67x")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1418924976]
 position = Vector2(0, -1)
 scale = Vector2(16.589218, 11.302085)
 polygon = PackedVector2Array(0.12056024, -0.08847925, 0, 9, 6.2088523, 8.317049)
-
-[node name="TriangleBumper" type="Sprite2D" parent="." unique_id=1497309792]
-position = Vector2(49, -5.9604645e-08)
-scale = Vector2(-0.38272855, 0.81362355)
-texture = ExtResource("1_5y67x")
