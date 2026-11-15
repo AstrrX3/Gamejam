@@ -13,18 +13,9 @@ func _process(delta: float) :
 
 
 func _on_start_pressed() :
-	button_type = "start"
-	$fadetrans.show()
-	$fadetrans/Fade_timer.start()
-	$fadetrans/AnimationPlayer.play("fadein")
+	Trans.trans("res://test.tscn")
 	
 
 
 func _on_quit_pressed() :
 	get_tree().quit()
-
-
-func _on_fade_timer_timeout() :
-	if button_type == "start" :
-		get_tree().change_scene_to_file("res://test.tscn")
-	

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cwgns8ixc5v08"]
 
 [ext_resource type="Texture2D" uid="uid://7x2jni53nib5" path="res://FatFuck.png" id="1_my301"]
-[ext_resource type="Texture2D" uid="uid://cprgnd6rngksp" path="res://icon.svg" id="2_abjgy"]
+[ext_resource type="Script" uid="uid://bjylexu6yedho" path="res://label.gd" id="1_xu7hh"]
+[ext_resource type="Texture2D" uid="uid://vr2ddtqbhkd3" path="res://button1.png" id="3_pmjk2"]
+[ext_resource type="Texture2D" uid="uid://byfcmcs3jo57l" path="res://button2.png" id="4_d75mr"]
 
 [sub_resource type="GDScript" id="GDScript_xu7hh"]
 script/source = "extends Node2D
@@ -11,26 +13,26 @@ var button_type = null
 func _process(delta: float) :
 	pass
 
-
 func _on_restart_pressed() -> void:
-	button_type = \"start\"
-	$fade.show()
-	$fade/Timer.start()
-	$fade/AnimationPlayer.play(\"fadein\")
+	Global.score = 0
+	Trans.trans(\"res://test.tscn\")
 	
-
-
 func _on_quit_pressed() -> void:
 	get_tree().quit()
-
-
-func _on_fade_timer_timeout() :
-	if button_type == \"start\" :
-		get_tree().change_scene_to_file(\"res://test.tscn\")
 "
 
 [node name="Node2D" type="Node2D" unique_id=479560312]
 script = SubResource("GDScript_xu7hh")
+
+[node name="Label" type="Label" parent="." unique_id=1022490366]
+offset_left = -466.0
+offset_top = -324.0
+offset_right = 466.0
+offset_bottom = -138.0
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_xu7hh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=359046705]
 
@@ -46,21 +48,21 @@ offset_bottom = 40.0
 
 [node name="restart" type="Button" parent="Control" unique_id=1046720985]
 layout_mode = 0
-offset_left = -491.0
+offset_left = -443.0
 offset_top = -137.0
-offset_right = -155.0
+offset_right = -107.0
 offset_bottom = -1.0
 text = "RESTART"
-icon = ExtResource("2_abjgy")
+icon = ExtResource("3_pmjk2")
 
 [node name="quit" type="Button" parent="Control" unique_id=726113031]
 layout_mode = 0
-offset_left = 157.0
+offset_left = 101.0
 offset_top = -137.0
-offset_right = 491.0
+offset_right = 435.0
 offset_bottom = -1.0
 text = "QUIT"
-icon = ExtResource("2_abjgy")
+icon = ExtResource("4_d75mr")
 
 [node name="fade" type="ColorRect" parent="." unique_id=731157207]
 visible = false

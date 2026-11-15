@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3vr13r38vcum" path="res://spawner.tscn" id="5_ykrsh"]
 [ext_resource type="Texture2D" uid="uid://bbr42lch34tr4" path="res://border.png" id="6_g14j6"]
 [ext_resource type="PackedScene" uid="uid://4p63w7xc2ve8" path="res://safety_net.tscn" id="7_vbegm"]
+[ext_resource type="Script" uid="uid://qcymrgrftylc" path="res://ui.gd" id="8_ehkex"]
 
 [node name="base" type="Node2D" unique_id=1876613877 groups=["wall"]]
 
@@ -15,7 +16,7 @@ position = Vector2(-274, -346)
 
 [node name="safety net" parent="level" unique_id=794603756 instance=ExtResource("7_vbegm")]
 position = Vector2(-8, 264.60236)
-scale = Vector2(1, 1.0099326)
+scale = Vector2(1.002001, 1.0099326)
 
 [node name="bumper" parent="level" unique_id=2039316992 instance=ExtResource("2_ppyta")]
 position = Vector2(-194, 201.98656)
@@ -52,26 +53,32 @@ scale = Vector2(1, 1.0099326)
 [node name="Node2D3" parent="level" unique_id=279108135 instance=ExtResource("4_ppyta")]
 position = Vector2(76, 339.3374)
 scale = Vector2(1, 1.0099326)
+mult = 1.2
 
 [node name="Node2D4" parent="level" unique_id=1973950885 instance=ExtResource("4_ppyta")]
 position = Vector2(156, 339.3374)
 scale = Vector2(1, 1.0099326)
+mult = 1.5
 
 [node name="Node2D8" parent="level" unique_id=1031438313 instance=ExtResource("4_ppyta")]
 position = Vector2(236, 339.3374)
 scale = Vector2(1, 1.0099326)
+mult = 2.0
 
 [node name="Node2D5" parent="level" unique_id=2039644919 instance=ExtResource("4_ppyta")]
 position = Vector2(-244, 339.3374)
 scale = Vector2(1, 1.0099326)
+mult = 2.0
 
 [node name="Node2D6" parent="level" unique_id=376871746 instance=ExtResource("4_ppyta")]
 position = Vector2(-164, 339.3374)
 scale = Vector2(1, 1.0099326)
+mult = 1.5
 
 [node name="Node2D7" parent="level" unique_id=1778121922 instance=ExtResource("4_ppyta")]
 position = Vector2(-84, 339.3374)
 scale = Vector2(1, 1.0099326)
+mult = 1.2
 
 [node name="Border" type="Sprite2D" parent="." unique_id=667593899]
 position = Vector2(-278, -342)
@@ -80,3 +87,22 @@ texture = ExtResource("6_g14j6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=527506816]
 position = Vector2(-278, -341)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1090817033]
+script = ExtResource("8_ehkex")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer" unique_id=311221042]
+offset_left = 12.0
+offset_top = 15.0
+offset_right = 162.0
+offset_bottom = 49.0
+color = Color(0, 0, 0, 0.48235294)
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer" unique_id=1519095969]
+offset_left = 15.0
+offset_top = 12.0
+offset_right = 159.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 27
+text = "GAY SEX"
+vertical_alignment = 1

@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 	$shotgun.rotcorrect = rotation_degrees
 	if Input.is_action_just_pressed("shoot"):
 		apply_impulse($shotgun.shoot())
+	if Input.is_action_just_pressed("restart"):
+		Trans.reload_scene()
 		
 func _integrate_forces(state):
 	if state.linear_velocity.length()>hardcap:

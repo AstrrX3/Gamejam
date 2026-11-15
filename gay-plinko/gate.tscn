@@ -1,16 +1,6 @@
 [gd_scene format=3 uid="uid://tkll5eks6cfb"]
 
-[sub_resource type="GDScript" id="GDScript_5y67x"]
-script/source = "extends Area2D
-
-
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group(\"player\"):
-		print(\"ded\")
-	if body.is_in_group(\"coin\"):
-		body.queue_free()
-"
+[ext_resource type="Script" uid="uid://c75nr1opg17db" path="res://Gate.gd" id="1_15vrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gk3h"]
 size = Vector2(78, 29)
@@ -38,9 +28,9 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [node name="Node2D" type="Node2D" unique_id=1904139459]
+script = ExtResource("1_15vrf")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=568190223]
-script = SubResource("GDScript_5y67x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1762724144]
 position = Vector2(0, 14.5)
@@ -86,10 +76,12 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_right = 76.0
 offset_bottom = 29.0
+scale = Vector2(1.0516851, 0.7535478)
 theme_override_fonts/font = SubResource("FontFile_y4ie1")
 text = "1x"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
