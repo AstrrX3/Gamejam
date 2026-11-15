@@ -8,25 +8,6 @@ size = Vector2(78, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4ie1"]
 size = Vector2(4, 62)
 
-[sub_resource type="FontFile" id="FontFile_y4ie1"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
 [node name="Node2D" type="Node2D" unique_id=1904139459]
 script = ExtResource("1_15vrf")
 
@@ -73,11 +54,14 @@ color = Color(1, 0, 0, 0.19607843)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=2052777837]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.052631542
+anchor_right = -0.0025865654
+anchor_bottom = 0.16352798
 offset_right = 76.0
 offset_bottom = 29.0
 scale = Vector2(1.0516851, 0.7535478)
-theme_override_fonts/font = SubResource("FontFile_y4ie1")
 text = "1x"
 horizontal_alignment = 1
 vertical_alignment = 1

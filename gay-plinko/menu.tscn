@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://7x2jni53nib5" path="res://FatFuck.png" id="1_ouk20"]
 [ext_resource type="Texture2D" uid="uid://vr2ddtqbhkd3" path="res://button1.png" id="2_4hy44"]
 [ext_resource type="Texture2D" uid="uid://byfcmcs3jo57l" path="res://button2.png" id="3_ytr4m"]
-[ext_resource type="Texture2D" uid="uid://cprgnd6rngksp" path="res://icon.svg" id="4_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://bniu2vi2rq7h1" path="res://button3.png" id="4_ytr4m"]
 
-[node name="Node2D" type="Node2D" unique_id=41311468]
+[node name="Node2D2" type="Node2D" unique_id=41311468]
 script = ExtResource("1_mae5d")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=384701607]
