@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cwgns8ixc5v08"]
+
+[ext_resource type="Texture2D" uid="uid://7x2jni53nib5" path="res://FatFuck.png" id="1_my301"]
+[ext_resource type="Texture2D" uid="uid://cprgnd6rngksp" path="res://icon.svg" id="2_abjgy"]
+
+[sub_resource type="GDScript" id="GDScript_xu7hh"]
+script/source = "extends Node2D
+var button_type = null
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) :
+	pass
+
+
+func _on_restart_pressed() -> void:
+	button_type = \"start\"
+	$fade.show()
+	$fade/Timer.start()
+	$fade/AnimationPlayer.play(\"fadein\")
+	
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_fade_timer_timeout() :
+	if button_type == \"start\" :
+		get_tree().change_scene_to_file(\"res://test.tscn\")
+"
+
+[node name="Node2D" type="Node2D" unique_id=479560312]
+script = SubResource("GDScript_xu7hh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=359046705]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=727245913]
+position = Vector2(0, 390)
+texture = ExtResource("1_my301")
+
+[node name="Control" type="Control" parent="." unique_id=588251239]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="restart" type="Button" parent="Control" unique_id=1046720985]
+layout_mode = 0
+offset_left = -491.0
+offset_top = -137.0
+offset_right = -155.0
+offset_bottom = -1.0
+text = "RESTART"
+icon = ExtResource("2_abjgy")
+
+[node name="quit" type="Button" parent="Control" unique_id=726113031]
+layout_mode = 0
+offset_left = 157.0
+offset_top = -137.0
+offset_right = 491.0
+offset_bottom = -1.0
+text = "QUIT"
+icon = ExtResource("2_abjgy")
+
+[node name="fade" type="ColorRect" parent="." unique_id=731157207]
+visible = false
+offset_left = -571.0
+offset_top = -318.0
+offset_right = 573.0
+offset_bottom = 327.0
+color = Color(0.039215688, 0, 0.13333334, 1)
+
+[node name="Timer" type="Timer" parent="fade" unique_id=1368494126]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade" unique_id=590441673]
+
+[connection signal="pressed" from="Control/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/quit" to="." method="_on_quit_pressed"]
