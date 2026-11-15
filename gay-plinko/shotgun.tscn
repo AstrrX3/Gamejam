@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cf2qm10id1ox8" path="res://shotgun.gd" id="1_gnj2g"]
 [ext_resource type="Texture2D" uid="uid://bdp0nb3uuhaac" path="res://b26bf2cee6625915e8e34c56f773c8b2.jpg" id="2_1ya1i"]
+[ext_resource type="AudioStream" uid="uid://dfwt01kpoex1k" path="res://explosion.wav" id="3_7oeqp"]
+[ext_resource type="AudioStream" uid="uid://c227ti8m6i360" path="res://pickupCoin.wav" id="4_a8mn3"]
 
 [node name="shotgun" type="Node2D" unique_id=1391668372]
 script = ExtResource("1_gnj2g")
@@ -31,6 +33,12 @@ target_position = Vector2(0, -149)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rotnod/Area2D" unique_id=1016479259]
 position = Vector2(0, -27)
 polygon = PackedVector2Array(10, -3, -10, -3, -45, -179, 0, -206, 45, -179)
+
+[node name="boom_sound" type="AudioStreamPlayer" parent="." unique_id=2053776562]
+stream = ExtResource("3_7oeqp")
+
+[node name="coin_pickup_sound" type="AudioStreamPlayer" parent="." unique_id=655780010]
+stream = ExtResource("4_a8mn3")
 
 [connection signal="body_entered" from="rotnod/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="rotnod/Area2D" to="." method="_on_area_2d_body_exited"]

@@ -11,6 +11,8 @@ var Mcharge = charge
 var restime: float = 0
 var targets: Array = []
 #the values are all over the place im so sorry TwT
+@onready var boom = $boom_sound
+@onready var coin_pick = $coin_pickup_sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,7 +44,9 @@ func shoot():
 			print(mult)
 	for i in targets:
 		i.del()
+		coin_pick.play()
 	vel = power * mult
+	boom.play()
 	return dir * vel
 
 

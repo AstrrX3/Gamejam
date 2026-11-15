@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dw7coow2nx0j7" path="res://bumper.gd" id="1_sn2yj"]
 [ext_resource type="Texture2D" uid="uid://vhxuos5khptk" path="res://CircleBumperBottom,.png" id="2_32yb8"]
 [ext_resource type="Texture2D" uid="uid://coj5tvrjx0r4s" path="res://CircleBumperTop.png" id="3_ou0cc"]
+[ext_resource type="AudioStream" uid="uid://cbo271y0wssg5" path="res://pinball_bounce.mp3" id="4_32yb8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4ie1"]
 radius = 18.0
@@ -70,5 +71,8 @@ texture = ExtResource("2_32yb8")
 [node name="CircleBumperTop" type="Sprite2D" parent="." unique_id=280711785]
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("3_ou0cc")
+
+[node name="pinball" type="AudioStreamPlayer" parent="." unique_id=320119072]
+stream = ExtResource("4_32yb8")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
