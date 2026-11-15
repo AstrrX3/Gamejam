@@ -59,5 +59,14 @@ position = Vector2(-278, -342)
 scale = Vector2(0.6018518, 0.6018518)
 texture = ExtResource("6_g14j6")
 
+[node name="points" type="Label" parent="." unique_id=2047202246]
+modulate = Color(0, 0, 0, 1)
+offset_left = -552.0
+offset_top = -642.0
+offset_right = -530.50085
+offset_bottom = -619.0
+scale = Vector2(4.9025383, 4.6822543)
+text = "$0"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=527506816]
 position = Vector2(-278, -341)

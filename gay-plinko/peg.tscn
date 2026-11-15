@@ -13,6 +13,5 @@ scale = Vector2(2.9999998, 2.9999998)
 shape = SubResource("CircleShape2D_pix54")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1490811152]
-modulate = Color(1, 0.39607844, 0.3529412, 1)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_y34qd")

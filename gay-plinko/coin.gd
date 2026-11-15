@@ -11,3 +11,5 @@ func _process(delta: float) -> void:
 
 func del():
 	queue_free()
+	
+	

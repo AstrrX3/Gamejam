@@ -14,6 +14,7 @@ var targets: Array = []
 @onready var boom = $boom_sound
 @onready var coin_pick = $coin_pickup_sound
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
