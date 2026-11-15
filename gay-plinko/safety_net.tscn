@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://4p63w7xc2ve8"]
+
+[ext_resource type="Script" uid="uid://ca6sncywyv0l5" path="res://safety_net.gd" id="1_dprv8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gk3h"]
+size = Vector2(684, 28)
+
+[sub_resource type="Animation" id="Animation_dprv8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_x8al1"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.36862746), Color(1, 1, 1, 1), Color(1, 1, 1, 0.36862746), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jld4h"]
+_data = {
+&"RESET": SubResource("Animation_dprv8"),
+&"new_animation": SubResource("Animation_x8al1")
+}
+
+[node name="safety net" type="Area2D" unique_id=794603756]
+script = ExtResource("1_dprv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=946861229]
+shape = SubResource("RectangleShape2D_2gk3h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=430917473]
+offset_left = -348.0
+offset_top = -10.0
+offset_right = 348.0
+offset_bottom = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1975577928]
+libraries/ = SubResource("AnimationLibrary_jld4h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

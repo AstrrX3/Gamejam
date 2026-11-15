@@ -25,9 +25,9 @@ func _process(delta: float) -> void:
 	restime += delta
 	if restime > reload:
 		charge = Mcharge
-	$Label.text = str(charge)
+	$Node2D/Label.text = str(charge)
 	$rotnod.rotation_degrees = (global_position - get_global_mouse_position()).angle() * (180/PI) - 90 - rotcorrect #what in gods name is this supposed to be
-	$Label.rotation_degrees = -rotcorrect
+	$Node2D.rotation_degrees = -rotcorrect
 
 func shoot():
 	#idk why but local mouse position refuses to work correctly and 
@@ -43,8 +43,9 @@ func shoot():
 		if $rotnod/RayCast2D.get_collider().is_in_group("wall"):
 			mult += 5 / (global_position - $rotnod/RayCast2D.get_collision_point()).length()
 			print(mult)
+	var list = targets.size()
 	for i in targets:
-		i.del()
+		i.del(list)
 		coin_pick.play()
 	vel = power * mult
 	boom.play()
