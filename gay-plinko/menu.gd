@@ -3,10 +3,10 @@ extends Node2D
 @onready var picture = $Button_Manager/tutorial/TextureRect
 
 var images = [
-	preload("res://tut1.png"),
-	preload("res://tut2.png"),
-	preload("res://tut3.png"),
-	preload("res://tut4.png")
+	preload("res://Tut1.png"),
+	preload("res://Tut2.png"),
+	preload("res://Tut3.png"),
+	preload("res://Tut4.png")
 	]
 	
 var current_image = 0
