@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var picture = $CanvasLayer/Button_Manager/TextureRect
+@onready var picture = $Button_Manager/TextureRect
 
 var images = [
 	preload("res://Tut1.png"),
