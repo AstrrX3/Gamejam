@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 func del(mult):
-	Global.score +=5 * mult
+	Global.score += 20 * mult
 	queue_free()
 	
 	

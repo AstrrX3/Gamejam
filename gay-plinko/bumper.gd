@@ -16,4 +16,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.apply_impulse((body.global_position - global_position).normalized() * 1600)
 		$AnimationPlayer.play("bump")
 		pinsound.play()
+		if body.is_in_group("player"):
+			Global.score += 2
 	

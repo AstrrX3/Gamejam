@@ -5,9 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://vr2ddtqbhkd3" path="res://button1.png" id="2_4hy44"]
 [ext_resource type="Texture2D" uid="uid://byfcmcs3jo57l" path="res://button2.png" id="3_ytr4m"]
 [ext_resource type="Texture2D" uid="uid://bniu2vi2rq7h1" path="res://button3.png" id="4_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://idbvpcnhhnbo" path="res://SealTheDeal.png" id="6_l48gv"]
 
 [node name="Node2D2" type="Node2D" unique_id=41311468]
 script = ExtResource("1_mae5d")
+
+[node name="SealTheDeal" type="Sprite2D" parent="." unique_id=1268336377]
+position = Vector2(262, -154)
+scale = Vector2(0.32734373, 0.32734373)
+texture = ExtResource("6_l48gv")
+
+[node name="FatFuck" type="Sprite2D" parent="." unique_id=1932595659]
+position = Vector2(268, 143)
+scale = Vector2(0.30624998, 0.30624995)
+texture = ExtResource("1_ouk20")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=384701607]
 
@@ -57,19 +68,13 @@ offset_bottom = 81.0
 text = "TUTORIAL"
 icon = ExtResource("4_ytr4m")
 
-[node name="TextureRect" type="TextureRect" parent="Button_Manager/tutorial" unique_id=282461216]
-visible = false
+[node name="TextureRect" type="TextureRect" parent="Button_Manager" unique_id=282461216]
 layout_mode = 0
-offset_left = -12.000015
-offset_top = -251.0
-offset_right = 948.0
-offset_bottom = 829.0
+offset_left = -101.00003
+offset_top = -303.0
+offset_right = 859.0
+offset_bottom = 777.0
 scale = Vector2(0.5613056, 0.5613056)
-
-[node name="FatFuck" type="Sprite2D" parent="." unique_id=1932595659]
-position = Vector2(268, 143)
-scale = Vector2(0.30624998, 0.30624995)
-texture = ExtResource("1_ouk20")
 
 [connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_Manager/Quit" to="." method="_on_quit_pressed"]
